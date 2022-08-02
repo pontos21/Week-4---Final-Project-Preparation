@@ -12,12 +12,14 @@ async function main() {
 main()
 
 function showUserPosts(id) {
-    window.location.href = `http://127.0.0.1:5500/index.html`
-    console.log(id)
+    localStorage.setItem("id", id)
+    console.log(window.location)
+    window.location.href = `${window.location.origin}/user.html`
+    // console.log(id)
 }
 
 function userHTML(user) {
-    return `<div class="user-card" onclick="showUserPosts(${user.id})>
+    return `<div class="user-card" onclick="showUserPosts(${user.id})">
     <div class="user-card__container">
         <h3>${user.name}</h4>
             <p><b>Email:</b> ${user.email}</p>
